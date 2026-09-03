@@ -1,4 +1,4 @@
-/* ========== Базовые стили ========== */
+
 * {
   margin: 0;
   padding: 0;
@@ -38,7 +38,7 @@ h2 {
   margin-bottom: 32px;
 }
 
-/* ========== Блок button (БЭМ-модификаторы) ========== */
+
 .button {
   display: inline-block;
   border: none;
@@ -55,7 +55,7 @@ h2 {
 .button--outline { background: transparent; border: 2px solid #2d5a8e; color: #2d5a8e; padding: 8px 18px; }
 .button--small   { padding: 10px 18px; font-size: 14px; }
 
-/* ========== Шапка (Flexbox) ========== */
+
 .header {
   background: #ffffff;
   box-shadow: 0 1px 0 #e3e6f0;
@@ -64,7 +64,7 @@ h2 {
   z-index: 100;
 }
 .header__inner {
-  display: flex;              /* Flexbox */
+  display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
@@ -77,7 +77,7 @@ h2 {
   line-height: 1.2;
 }
 .nav__list {
-  display: flex;              /* Flexbox */
+  display: flex;
   flex-wrap: wrap;
   gap: 22px;
 }
@@ -85,10 +85,10 @@ h2 {
 .nav__link:hover { color: #2d5a8e; }
 .nav__link--active { color: #2d5a8e; font-weight: 600; }
 
-/* ========== Hero (Flexbox) ========== */
+
 .hero { background: #2d5a8e; color: #ffffff; }
 .hero__inner {
-  display: flex;              /* Flexbox */
+  display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 40px;
@@ -99,10 +99,10 @@ h2 {
 .hero__text  { color: #d5e3f6; margin-bottom: 28px; }
 .hero__image { width: 400px; flex-shrink: 0; border-radius: 16px; }
 
-/* ========== Преимущества (CSS Grid) ========== */
+
 .advantages { padding: 64px 0; background: #eef1fa; }
 .advantages__grid {
-  display: grid;                              /* CSS Grid */
+  display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
@@ -116,10 +116,10 @@ h2 {
 .advantage__title { font-size: 17px; margin-bottom: 8px; }
 .advantage__text  { font-size: 14px; color: #5a6480; }
 
-/* ========== Каталог (CSS Grid) ========== */
+
 .catalog { padding: 64px 0; background: #d9deed; }
 .catalog__grid {
-  display: grid;                              /* CSS Grid */
+  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 20px;
 }
@@ -127,7 +127,7 @@ h2 {
   background: #ffffff;
   border-radius: 12px;
   padding: 16px;
-  display: flex;              /* Flexbox внутри карточки */
+  display: flex;
   flex-direction: column;
   gap: 12px;
 }
@@ -141,10 +141,10 @@ h2 {
 .product-card__title { font-size: 17px; }
 .product-card__description { font-size: 14px; color: #5a6480; flex-grow: 1; }
 
-/* ========== Как заказать (CSS Grid) ========== */
+
 .steps { padding: 64px 0; background: #eef1fa; }
 .steps__grid {
-  display: grid;                              /* CSS Grid */
+  display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
@@ -169,10 +169,10 @@ h2 {
 .step__title { font-size: 17px; margin-bottom: 8px; }
 .step__text  { font-size: 14px; color: #5a6480; }
 
-/* ========== Отзывы (CSS Grid + модификатор) ========== */
+
 .reviews { padding: 64px 0; background: #d9deed; }
 .reviews__grid {
-  display: grid;                              /* CSS Grid */
+  display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
@@ -181,11 +181,11 @@ h2 {
   border-radius: 12px;
   padding: 24px;
 }
-.review--wide { grid-column: 1 / -1; }        /* БЭМ-модификатор */
+.review--wide { grid-column: 1 / -1; }
 .review__text   { font-size: 15px; color: #333c5c; }
 .review__author { margin-top: 14px; color: #2d5a8e; font-weight: 600; }
 
-/* ========== Заявка / форма (Flexbox) ========== */
+
 .order { padding: 64px 0; background: #f4f6fb; }
 .order__title { margin-bottom: 12px; }
 .order__subtitle {
@@ -197,11 +197,11 @@ h2 {
 .form {
   max-width: 680px;
   margin: 0 auto;
-  display: flex;              /* Flexbox */
+  display: flex;
   flex-direction: column;
   gap: 16px;
 }
-.form__row { display: flex; gap: 16px; }      /* Flexbox */
+.form__row { display: flex; gap: 16px; }
 .form__field { flex: 1; display: flex; flex-direction: column; }
 .form__label { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
 .form__input,
@@ -226,10 +226,10 @@ h2 {
 .form__agree { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #333c5c; }
 .form__submit { width: 100%; }
 
-/* ========== Подвал (Flexbox) ========== */
+
 .footer { background: #101a33; color: #c6cfe2; }
 .footer__inner {
-  display: flex;              /* Flexbox */
+  display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 40px;
@@ -248,7 +248,7 @@ h2 {
   color: #8a94b5;
 }
 
-/* ========== Адаптивность (медиазапросы) ========== */
+
 @media (max-width: 900px) {
   .hero__inner { flex-direction: column; align-items: flex-start; padding: 48px 0; }
   .hero__image { width: 100%; }
