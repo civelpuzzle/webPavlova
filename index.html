@@ -8,276 +8,359 @@
 </head>
 <body>
 
-
+  <!-- Шапка -->
   <header class="header">
-    <div class="container">
-      <div class="header__inner">
-        <a href="#" class="header__logo">VapeZone</a>
+    <div class="container header__inner">
+      <a href="#" class="header__logo">VapeZone</a>
 
-        <nav class="nav">
-          <ul class="nav__list">
-            <li class="nav__item"><a href="#" class="nav__link nav__link--active">Главная</a></li>
-            <li class="nav__item"><a href="#advantages" class="nav__link">Почему мы</a></li>
-            <li class="nav__item"><a href="#catalog" class="nav__link">Каталог</a></li>
-            <li class="nav__item"><a href="#steps" class="nav__link">Как заказать</a></li>
-            <li class="nav__item"><a href="#reviews" class="nav__link">Отзывы</a></li>
-            <li class="nav__item"><a href="#order" class="nav__link">Контакты</a></li>
-          </ul>
-        </nav>
+      <nav class="nav" id="nav">
+        <ul class="nav__list">
+          <li><a href="#" class="nav__link nav__link--active">Главная</a></li>
+          <li><a href="#advantages" class="nav__link">Почему мы</a></li>
+          <li><a href="#catalog" class="nav__link">Каталог</a></li>
+          <li><a href="#steps" class="nav__link">Как заказать</a></li>
+          <li><a href="#reviews" class="nav__link">Отзывы</a></li>
+          <li><a href="#order" class="nav__link">Контакты</a></li>
+        </ul>
+      </nav>
 
-        <button type="button" class="button button--outline header__login">Войти</button>
+      <div class="header__actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Переключить тему">🌙</button>
+        <button class="burger" id="burger" type="button" aria-label="Открыть меню">
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+        </button>
       </div>
     </div>
   </header>
 
-  <main>
+  <!-- Первый экран -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <h1 class="hero__title">Культура пара, которой доверяют</h1>
+        <p class="hero__text">
+          Устройства, жидкости и аксессуары от проверенных брендов.
+          Поможем подобрать то, что подходит именно вам, и доставим по городу за 24 часа.
+          Мы за ЗОЖ!
+        </p>
+        <div class="hero__buttons">
+          <a href="#catalog" class="button button--primary">Каталог</a>
+          <button class="button button--light" id="openModal" type="button">Оставить заявку</button>
+        </div>
+      </div>
+      <img class="hero__image" src="image/logo.jpg" alt="VapeZone">
+    </div>
+  </section>
 
-    <section class="hero">
-      <div class="container">
-        <div class="hero__inner">
-          <div class="hero__content">
-            <h1 class="hero__title">Культура пара, которой доверяют</h1>
-            <p class="hero__text">Устройства, жидкости и аксессуары от проверенных брендов.
-              Поможем подобрать то, что подходит именно вам, и доставим по городу за 24 часа.</p>
-            <a href="#catalog" class="button button--primary hero__button">Каталог</a>
+  <!-- Почему мы -->
+  <section class="advantages" id="advantages">
+    <div class="container">
+      <h2>Почему VapeZone</h2>
+      <div class="advantages__grid">
+        <div class="advantage">
+          <div class="advantage__icon">✅</div>
+          <h3 class="advantage__title">Оригинальная продукция</h3>
+          <p class="advantage__text">Работаем напрямую с производителями и проверяем каждую партию товара.</p>
+        </div>
+        <div class="advantage">
+          <div class="advantage__icon">🚚</div>
+          <h3 class="advantage__title">Быстрая доставка</h3>
+          <p class="advantage__text">По городу — за 24 часа, по стране — от 2 до 4 дней.</p>
+        </div>
+        <div class="advantage">
+          <div class="advantage__icon">💬</div>
+          <h3 class="advantage__title">Честная консультация</h3>
+          <p class="advantage__text">Поможем выбрать устройство и жидкость под ваш вкус и бюджет.</p>
+        </div>
+        <div class="advantage">
+          <div class="advantage__icon">🎁</div>
+          <h3 class="advantage__title">Программа лояльности</h3>
+          <p class="advantage__text">Скидки постоянным клиентам и бонусы с каждой покупки.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Каталог -->
+  <section class="catalog" id="catalog">
+    <div class="container">
+      <h2>Ассортимент</h2>
+      <div class="catalog__grid">
+        <article class="product-card">
+          <img class="product-card__image" src="image/hqd.png" alt="Одноразовые устройства">
+          <h3 class="product-card__title">Одноразовые устройства</h3>
+          <p class="product-card__description">Готовые к использованию устройства «из коробки». До 6000 затяжек.</p>
+          <a href="#" class="button button--outline button--small">Подробнее</a>
+        </article>
+        <article class="product-card">
+          <img class="product-card__image" src="image/podSystem.png" alt="POD-системы">
+          <h3 class="product-card__title">POD-системы</h3>
+          <p class="product-card__description">Компактные устройства на каждый день. Простое обслуживание и заправка.</p>
+          <a href="#" class="button button--outline button--small">Подробнее</a>
+        </article>
+        <article class="product-card">
+          <img class="product-card__image" src="image/bocsMod.png" alt="Боксмоды">
+          <h3 class="product-card__title">Боксмоды</h3>
+          <p class="product-card__description">Мощные устройства для густого пара и гибкой настройки.</p>
+          <a href="#" class="button button--outline button--small">Подробнее</a>
+        </article>
+        <article class="product-card">
+          <img class="product-card__image" src="image/ziza.png" alt="Классические жидкости">
+          <h3 class="product-card__title">Классические жидкости</h3>
+          <p class="product-card__description">Проверенные вкусы, никотин 0–12 мг. Флаконы 60–120 мл.</p>
+          <a href="#" class="button button--outline button--small">Подробнее</a>
+        </article>
+        <article class="product-card">
+          <img class="product-card__image" src="image/soll.png" alt="Солевые жидкости">
+          <h3 class="product-card__title">Солевые жидкости</h3>
+          <p class="product-card__description">Мягкая затяжка и яркий вкус. Идеальны для POD-систем.</p>
+          <a href="#" class="button button--outline button--small">Подробнее</a>
+        </article>
+        <article class="product-card">
+          <img class="product-card__image" src="image/ispar.png" alt="Картриджи и испарители">
+          <h3 class="product-card__title">Картриджи и испарители</h3>
+          <p class="product-card__description">Оригинальные расходники для всех популярных POD-систем.</p>
+          <a href="#" class="button button--outline button--small">Подробнее</a>
+        </article>
+        <article class="product-card">
+          <img class="product-card__image" src="image/aksesuarEpt.png" alt="Аксессуары">
+          <h3 class="product-card__title">Аксессуары</h3>
+          <p class="product-card__description">Зарядные устройства, чехлы, дрип-типы и средства для ухода.</p>
+          <a href="#" class="button button--outline button--small">Подробнее</a>
+        </article>
+        <article class="product-card">
+          <img class="product-card__image" src="image/zames.png" alt="Компоненты для самозамеса">
+          <h3 class="product-card__title">Компоненты для самозамеса</h3>
+          <p class="product-card__description">Базы, глицерин и ароматизаторы для собственных жидкостей.</p>
+          <a href="#" class="button button--outline button--small">Подробнее</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Как заказать -->
+  <section class="steps" id="steps">
+    <div class="container">
+      <h2>Как заказать</h2>
+      <div class="steps__grid">
+        <div class="step">
+          <span class="step__number">1</span>
+          <h3 class="step__title">Выберите товар</h3>
+          <p class="step__text">Посмотрите каталог или спросите нас — подскажем и поможем с выбором.</p>
+        </div>
+        <div class="step">
+          <span class="step__number">2</span>
+          <h3 class="step__title">Оформите заявку</h3>
+          <p class="step__text">Заполните форму на сайте или позвоните нам — это займёт пару минут.</p>
+        </div>
+        <div class="step">
+          <span class="step__number">3</span>
+          <h3 class="step__title">Получите доставку</h3>
+          <p class="step__text">Курьер привезёт заказ по городу за 24 часа. Оплата при получении.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Отзывы -->
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <h2>Отзывы</h2>
+      <div class="reviews__grid">
+        <div class="review">
+          <p class="review__text">«Беру здесь уже полгода. Всегда оригинал, быстрая доставка и приятные цены.»</p>
+          <p class="review__author">— Андрей</p>
+        </div>
+        <div class="review">
+          <p class="review__text">«Помогли выбрать первую POD-систему и всё подробно объяснили. Отличный сервис!»</p>
+          <p class="review__author">— Мария</p>
+        </div>
+        <div class="review review--wide">
+          <p class="review__text">«VapeZone — магазин, который я советую всем друзьям. Огромный выбор жидкостей, честные консультации и программа лояльности, которая реально экономит деньги.»</p>
+          <p class="review__author">— Игорь</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Галерея (8) -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <h2>Галерея</h2>
+      <div class="gallery__layout">
+        <div class="gallery__main">
+          <img id="galleryImage" src="image/hqd.png" alt="Изображение галереи">
+        </div>
+        <div class="gallery__thumbs" id="galleryThumbs">
+          <img src="image/hqd.png" alt="Фото 1" class="active">
+          <img src="image/podSystem.png" alt="Фото 2">
+          <img src="image/soll.png" alt="Фото 3">
+          <img src="image/zames.png" alt="фоточко">
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Часто задаваемые вопросы (6) -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <h2>Часто задаваемые вопросы</h2>
+      <div class="faq__list">
+        <div class="faq__item">
+          <button class="faq__question" type="button">
+            С какого возраста можно покупать товары в магазине?
+            <span class="faq__arrow">▾</span>
+          </button>
+          <div class="faq__answer">
+            <p>Все товары продаются только совершеннолетним. При получении заказа потребуется документ, подтверждающий возраст 18+.</p>
           </div>
-          <img class="hero__image"
-            src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='520'%20height='380'%3E%3Crect%20width='520'%20height='380'%20rx='16'%20fill='%23406ba3'/%3E%3Ctext%20x='260'%20y='200'%20font-family='Arial'%20font-size='30'%20fill='%23d5e3f6'%20text-anchor='middle'%3EVapeZone%3C/text%3E%3C/svg%3E"
-            alt="Устройства и жидкости VapeZone">
         </div>
-      </div>
-    </section>
-
-
-    <section class="advantages" id="advantages">
-      <div class="container">
-        <h2 class="advantages__title">Почему VapeZone</h2>
-        <div class="advantages__grid">
-          <article class="advantage">
-            <div class="advantage__icon">✅</div>
-            <h3 class="advantage__title">Оригинальная продукция</h3>
-            <p class="advantage__text">Работаем напрямую с производителями и проверяем каждую партию товара.</p>
-          </article>
-          <article class="advantage">
-            <div class="advantage__icon">🚚</div>
-            <h3 class="advantage__title">Быстрая доставка</h3>
-            <p class="advantage__text">По городу — за 24 часа, по стране — от 2 до 4 дней.</p>
-          </article>
-          <article class="advantage">
-            <div class="advantage__icon">💬</div>
-            <h3 class="advantage__title">Честная консультация</h3>
-            <p class="advantage__text">Поможем выбрать устройство и жидкость под ваш вкус и бюджет.</p>
-          </article>
-          <article class="advantage">
-            <div class="advantage__icon">🎁</div>
-            <h3 class="advantage__title">Программа лояльности</h3>
-            <p class="advantage__text">Скидки постоянным клиентам и бонусы с каждой покупки.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-
-    <section class="catalog" id="catalog">
-      <div class="container">
-        <h2 class="catalog__title">Ассортимент</h2>
-        <div class="catalog__grid">
-
-          <article class="product-card">
-            <img class="product-card__image" alt="Одноразовые устройства"
-              src="image/hqd.png">
-            <h3 class="product-card__title">Одноразовые устройства</h3>
-            <p class="product-card__description">Готовые к использованию устройства «из коробки». До 6000 затяжек.</p>
-            <button type="button" class="button button--primary button--small product-card__button">Подробнее</button>
-          </article>
-
-          <article class="product-card">
-            <img class="product-card__image" alt="POD-системы"
-              src="image/podSystem.png">
-            <h3 class="product-card__title">POD-системы</h3>
-            <p class="product-card__description">Компактные устройства на каждый день. Простое обслуживание и заправка.</p>
-            <button type="button" class="button button--primary button--small product-card__button">Подробнее</button>
-          </article>
-
-          <article class="product-card">
-            <img class="product-card__image" alt="Боксмоды"
-              src="image/bocsMod.png">
-            <h3 class="product-card__title">Боксмоды</h3>
-            <p class="product-card__description">Мощные устройства для густого пара и гибкой настройки.</p>
-            <button type="button" class="button button--primary button--small product-card__button">Подробнее</button>
-          </article>
-
-          <article class="product-card">
-            <img class="product-card__image" alt="Классические жидкости"
-              src="image/ziza.png">
-            <h3 class="product-card__title">Классические жидкости</h3>
-            <p class="product-card__description">Проверенные вкусы, никотин 0–12 мг. Флаконы 60–120 мл.</p>
-            <button type="button" class="button button--primary button--small product-card__button">Подробнее</button>
-          </article>
-
-          <article class="product-card">
-            <img class="product-card__image" alt="Солевые жидкости"
-              src="image/soll.png">
-            <h3 class="product-card__title">Солевые жидкости</h3>
-            <p class="product-card__description">Мягкая затяжка и яркий вкус. Идеальны для POD-систем.</p>
-            <button type="button" class="button button--primary button--small product-card__button">Подробнее</button>
-          </article>
-
-          <article class="product-card">
-            <img class="product-card__image" alt="Картриджи и испарители"
-              src="image/ispar.png">
-            <h3 class="product-card__title">Картриджи и испарители</h3>
-            <p class="product-card__description">Оригинальные расходники для всех популярных POD-систем.</p>
-            <button type="button" class="button button--primary button--small product-card__button">Подробнее</button>
-          </article>
-
-          <article class="product-card">
-            <img class="product-card__image" alt="Аксессуары"
-              src="image/aksesuarEpt.png">
-            <h3 class="product-card__title">Аксессуары</h3>
-            <p class="product-card__description">Зарядные устройства, чехлы, дрип-типы и средства для ухода.</p>
-            <button type="button" class="button button--primary button--small product-card__button">Подробнее</button>
-          </article>
-
-          <article class="product-card">
-            <img class="product-card__image" alt="Компоненты для самозамеса"
-              src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='400'%20height='300'%3E%3Crect%20width='400'%20height='300'%20fill='%23dfe6f5'/%3E%3Ctext%20x='200'%20y='158'%20font-family='Arial'%20font-size='24'%20fill='%237d8aa5'%20text-anchor='middle'%3EVapeZone%3C/text%3E%3C/svg%3E">
-            <h3 class="product-card__title">Компоненты для самозамеса</h3>
-            <p class="product-card__description">Базы, глицерин и ароматизаторы для собственных жидкостей.</p>
-            <button type="button" class="button button--primary button--small product-card__button">Подробнее</button>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-
-    <section class="steps" id="steps">
-      <div class="container">
-        <h2 class="steps__title">Как заказать</h2>
-        <div class="steps__grid">
-          <article class="step">
-            <div class="step__number">1</div>
-            <h3 class="step__title">Выберите товар</h3>
-            <p class="step__text">Посмотрите каталог или спросите нас — подскажем и поможем с выбором.</p>
-          </article>
-          <article class="step">
-            <div class="step__number">2</div>
-            <h3 class="step__title">Оформите заявку</h3>
-            <p class="step__text">Заполните форму на сайте или позвоните нам — это займёт пару минут.</p>
-          </article>
-          <article class="step">
-            <div class="step__number">3</div>
-            <h3 class="step__title">Получите доставку</h3>
-            <p class="step__text">Курьер привезёт заказ по городу за 24 часа. Оплата при получении.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-
-    <section class="reviews" id="reviews">
-      <div class="container">
-        <h2 class="reviews__title">Отзывы</h2>
-        <div class="reviews__grid">
-          <article class="review">
-            <p class="review__text">«Беру здесь уже полгода. Всегда оригинал, быстрая доставка и приятные цены.»</p>
-            <p class="review__author">— Андрей</p>
-          </article>
-          <article class="review">
-            <p class="review__text">«Помогли выбрать первую POD-систему и всё подробно объяснили. Отличный сервис!»</p>
-            <p class="review__author">— Мария</p>
-          </article>
-          <article class="review review--wide">
-            <p class="review__text">«VapeZone — магазин, который я советую всем друзьям. Огромный выбор жидкостей,
-              честные консультации и программа лояльности, которая реально экономит деньги.»</p>
-            <p class="review__author">— Игорь</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-
-    <section class="order" id="order">
-      <div class="container">
-        <h2 class="order__title">Заявка</h2>
-        <p class="order__subtitle">Оставьте контакты — мы перезвоним и ответим на все вопросы.</p>
-
-        <form class="form" action="#" method="post">
-          <div class="form__row">
-            <div class="form__field">
-              <label class="form__label" for="name">Имя *</label>
-              <input class="form__input" type="text" id="name" name="name" placeholder="Иван Петров" required>
-            </div>
-            <div class="form__field">
-              <label class="form__label" for="phone">Телефон *</label>
-              <input class="form__input" type="tel" id="phone" name="phone" placeholder="+7 (999) 123-45-67" required>
-              <span class="form__hint">Формат: +7 (XXX) XXX-XX-XX</span>
-            </div>
+        <div class="faq__item">
+          <button class="faq__question" type="button">
+            Как быстро осуществляется доставка?
+            <span class="faq__arrow">▾</span>
+          </button>
+          <div class="faq__answer">
+            <p>По городу курьер привезёт заказ в течение 24 часов. Доставка по стране занимает от 2 до 4 дней.</p>
           </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" type="button">
+            Можно ли оплатить заказ при получении?
+            <span class="faq__arrow">▾</span>
+          </button>
+          <div class="faq__answer">
+            <p>Да, вы можете оплатить заказ наличными или картой курьеру при получении.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" type="button">
+            Как накопить бонусы по программе лояльности?
+            <span class="faq__arrow">▾</span>
+          </button>
+          <div class="faq__answer">
+            <p>С каждой покупки начисляются бонусы, а для постоянных клиентов действуют дополнительные скидки.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" type="button">
+            Что делать, если испаритель быстро вышел из строя?
+            <span class="faq__arrow">▾</span>
+          </button>
+          <div class="faq__answer">
+            <p>Обратитесь к нам — мы проверим партию, поможем подобрать замену и подскажем по обслуживанию.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Заявка -->
+  <section class="order" id="order">
+    <div class="container">
+      <h2 class="order__title">Заявка</h2>
+      <p class="order__subtitle">Оставьте контакты — мы перезвоним и ответим на все вопросы.</p>
+      <form class="form" action="#" method="post">
+        <div class="form__row">
           <div class="form__field">
-            <label class="form__label" for="email">E-mail *</label>
-            <input class="form__input" type="email" id="email" name="email" placeholder="your@example.com" required>
+            <label class="form__label" for="name">Имя *</label>
+            <input class="form__input" type="text" id="name" name="name" required>
           </div>
-
           <div class="form__field">
-            <label class="form__label" for="category">Категория *</label>
-            <select class="form__select" id="category" name="category" required>
-              <option value="" disabled selected>Выберите категорию</option>
-              <option value="disposable">Одноразовые устройства</option>
-              <option value="pods">POD-системы</option>
-              <option value="mods">Боксмоды</option>
-              <option value="liquids">Жидкости</option>
-              <option value="accessories">Аксессуары</option>
-              <option value="other">Другое / нужна консультация</option>
+            <label class="form__label" for="phone">Телефон *</label>
+            <input class="form__input" type="tel" id="phone" name="phone" required>
+            <span class="form__hint">Формат: +7 (XXX) XXX-XX-XX</span>
+          </div>
+        </div>
+        <div class="form__row">
+          <div class="form__field">
+            <label class="form__label" for="email">E-mail</label>
+            <input class="form__input" type="email" id="email" name="email">
+          </div>
+          <div class="form__field">
+            <label class="form__label" for="category">Категория</label>
+            <select class="form__select" id="category" name="category">
+              <option value="" selected>Выберите категорию</option>
+              <option>Одноразовые устройства</option>
+              <option>POD-системы</option>
+              <option>Боксмоды</option>
+              <option>Жидкости</option>
+              <option>Аксессуары</option>
+              <option>Другое / нужна консультация</option>
             </select>
           </div>
+        </div>
+        <div class="form__field">
+          <label class="form__label" for="comment">Комментарий</label>
+          <textarea class="form__textarea" id="comment" name="comment"></textarea>
+        </div>
+        <label class="form__agree">
+          <input class="form__checkbox" type="checkbox" required>
+          Согласен на обработку персональных данных *
+        </label>
+        <button class="button button--primary form__submit" type="submit">Отправить заявку</button>
+      </form>
+    </div>
+  </section>
 
-          <div class="form__field">
-            <label class="form__label" for="comment">Комментарий</label>
-            <textarea class="form__textarea" id="comment" name="comment"
-              placeholder="Например: пожелания, удобное время доставки..."></textarea>
-          </div>
-
-          <label class="form__agree">
-            <input type="checkbox" class="form__checkbox" required>
-            <span>Согласен на обработку персональных данных *</span>
-          </label>
-
-          <button type="submit" class="button button--primary form__submit">Отправить заявку</button>
-        </form>
-      </div>
-    </section>
-  </main>
-
-
+  <!-- Футер -->
   <footer class="footer">
-    <div class="container">
-      <div class="footer__inner">
-        <div class="footer__column">
-          <a href="#" class="footer__logo">VapeZone</a>
-          <p class="footer__text">Магазин вейпов и жидкостей. Оригинальная продукция и быстрая доставка. 18+</p>
-        </div>
-        <div class="footer__column">
-          <h3 class="footer__title">Контакты</h3>
-          <ul class="footer__list">
-            <li><a href="tel:+79991234567" class="footer__link">+7 (999) 123-45-67</a></li>
-            <li><a href="mailto:hello@vapezone.ru" class="footer__link">hello@vapezone.ru</a></li>
-          </ul>
-        </div>
-        <div class="footer__column">
-          <h3 class="footer__title">Информация</h3>
-          <ul class="footer__list">
-            <li><a href="#" class="footer__link">Политика конфиденциальности</a></li>
-            <li><a href="#" class="footer__link">Условия использования</a></li>
-            <li>г. Москва, ул. Арбат, 10</li>
-          </ul>
-        </div>
+    <div class="container footer__inner">
+      <div>
+        <a href="#" class="footer__logo">VapeZone</a>
+        <p class="footer__text">Магазин вейпов и жидкостей. Оригинальная продукция и быстрая доставка. 18+</p>
       </div>
-      <p class="footer__bottom">© 2026 VapeZone. Все права защищены.</p>
+      <div>
+        <h3 class="footer__title">Контакты</h3>
+        <ul class="footer__list">
+          <li><a class="footer__link" href="tel:+79991234567">+7 (999) 123-45-67</a></li>
+          <li><a class="footer__link" href="mailto:hello@vapezone.ru">hello@vapezone.ru</a></li>
+          <li>г. Москва, ул. Арбат, 10</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer__title">Информация</h3>
+        <ul class="footer__list">
+          <li><a class="footer__link" href="#">Политика конфиденциальности</a></li>
+          <li><a class="footer__link" href="#">Условия использования</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">© 2026 VapeZone. Все права защищены.</div>
     </div>
   </footer>
 
+  <!-- Кнопка "Наверх" (5) -->
+  <button class="scroll-top" id="scrollTop" type="button" aria-label="Наверх">↑</button>
+
+  <!-- Модальное окно (2 3) -->
+  <div class="modal" id="feedbackModal">
+    <div class="modal__overlay"></div>
+    <div class="modal__window">
+      <button class="modal__close" id="closeModal" type="button" aria-label="Закрыть">✕</button>
+      <h3 class="modal__title">Оставить заявку</h3>
+      <p class="modal__text">Оставьте контакты — мы перезвоним и ответим на все вопросы.</p>
+      <form class="modal__form" id="modalForm">
+        <label class="modal__label">
+          Имя *
+          <input class="modal__input" type="text" name="name" required>
+        </label>
+        <label class="modal__label">
+          Телефон *
+          <input class="modal__input" type="tel" name="phone" placeholder="+7 (XXX) XXX-XX-XX" required>
+        </label>
+        <button class="button button--primary" type="submit">Отправить</button>
+      </form>
+      <p class="modal__success" id="modalSuccess" style="display:none;">
+        Спасибо! Заявка отправлена.<br>Мы свяжемся с вами в ближайшее время.
+      </p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
