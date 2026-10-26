@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог — VapeZone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Шапка (скопирована из index.html, чтобы работала навигация и тема) -->
+    <header class="header">
+        <div class="container header__inner">
+            <a href="index.html" class="header__logo">VapeZone</a>
+            <nav class="nav" id="nav">
+                <ul class="nav__list">
+                    <li><a href="index.html" class="nav__link">Главная</a></li>
+                    <li><a href="index.html#advantages" class="nav__link">Почему мы</a></li>
+                    <li><a href="catalog.html" class="nav__link nav__link--active">Каталог</a></li>
+                    <li><a href="index.html#steps" class="nav__link">Как заказать</a></li>
+                    <li><a href="index.html#reviews" class="nav__link">Отзывы</a></li>
+                    <li><a href="index.html#order" class="nav__link">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="header__actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">🌙</button>
+                <button class="burger" id="burger" aria-label="Меню">
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Секция каталога (использует готовые стили .catalog и .product-card) -->
+    <section class="catalog">
+        <div class="container">
+            <h2>Каталог товаров</h2>
+            <p style="text-align:center; margin-bottom:30px; color:#5a6480;">
+                Актуальный ассортимент из базы данных
+            </p>
+
+            <!-- Сюда JavaScript вставит карточки -->
+            <div id="catalogGrid" class="catalog__grid">
+                <p style="text-align:center; grid-column:1/-1;">Загрузка товаров...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div>
+                    <a href="index.html" class="footer__logo">VapeZone</a>
+                    <p class="footer__text">Магазин вейпов и жидкостей. Оригинальная продукция и быстрая доставка. 18+</p>
+                </div>
+                <div>
+                    <h4 class="footer__title">Контакты</h4>
+                    <ul class="footer__list">
+                        <li><a href="tel:+79991234567" class="footer__link">+7 (999) 123-45-67</a></li>
+                        <li><a href="mailto:hello@vapezone.ru" class="footer__link">hello@vapezone.ru</a></li>
+                        <li>г. Москва, ул. Арбат, 10</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">© 2026 VapeZone. Все права защищены.</div>
+        </div>
+    </footer>
+
+    <!-- Подключаем твой script.js, чтобы работали бургер, тема и т.д. -->
+    <script src="script.js"></script>
+
+    <!-- Скрипт загрузки товаров из API -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const grid = document.getElementById("catalogGrid");
+            if (!grid) return;
+
+            fetch("/items")
+                .then(response => {
+                    if (!response.ok) throw new Error("Ошибка сети");
+                    return response.json();
+                })
+                .then(items => {
+                    if (!items || items.length === 0) {
+                        grid.innerHTML = "<p style='text-align:center; grid-column:1/-1;'>Товары пока не добавлены в базу.</p>";
+                        return;
+                    }
+
+                    // Рендерим карточки, используя ТОЛЬКО существующие классы из style.css
+                    const html = items.map(item => `
+                        <article class="product-card">
+                            <div class="product-card__image" style="display:flex; align-items:center; justify-content:center; font-size:42px; color:#2d5a8e;">
+                                🛒
+                            </div>
+                            <h3 class="product-card__title">${item.name}</h3>
+                            <p class="product-card__description">
+                                <strong>Цена:</strong> ${Number(item.price).toFixed(2)} ₽<br>
+                                <strong>Остаток:</strong> ${item.stock_balance} шт.<br>
+                                <strong>Категория:</strong> #${item.id_category}<br>
+                                <strong>Поставщик:</strong> #${item.id_supplier}
+                            </p>
+                        </article>
+                    `).join("");
+
+                    grid.innerHTML = html;
+                })
+                .catch(err => {
+                    console.error("Ошибка загрузки:", err);
+                    grid.innerHTML = "<p style='color:red; text-align:center; grid-column:1/-1;'>Не удалось загрузить товары. Проверьте, запущен ли сервер.</p>";
+                });
+        });
+    </script>
+
+</body>
+</html>
