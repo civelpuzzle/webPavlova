@@ -4,7 +4,8 @@ const path = require("path");
 
 const app = express();
 
-app.use(express.static(path.join(__dirname)));
+app.use(express.static(path.join(__dirname, "..", "frontend")));
+app.use(express.static(path.join(__dirname, "..", "image")));
 app.use(express.json());
 
 app.get("/items", (req, res) => {
