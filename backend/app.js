@@ -24,6 +24,35 @@ app.get("/items", (req, res) => {
   );
 });
 
+app.post("/createAppMini", async (req, res) => {
+  const { first_name, phone } = req.body;
+
+  if (!first_name || !phone) {
+    return res.status(400).json({
+      message: "Необходимо заполнить все поля"
+    });
+  }
+
+  try {
+    // Вызываем .promise() перед .query()
+    await db.promise().query(
+      "INSERT INTO applications (first_name, phone) VALUES (?, ?)",
+      [first_name, phone]
+    );
+
+    return res.status(201).json({
+      message: "Заявка успешно создана"
+    });
+
+  } catch (error) {
+    console.error("Ошибка при вставке в БД:", error);
+    return res.status(500).json({
+      message: "Внутренняя ошибка сервера"
+    });
+  }
+});
+
 app.listen(3000, () => {
-    console.log("Сервер запущен");
+  console.log("Сервер запущен");
+  console.log("http://localhost:3000/")
 });

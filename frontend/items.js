@@ -65,8 +65,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const html = filteredItems.map(item => `
             <article class="product-card">
-                <div class="product-card__image">
-                    <img src="${item.photo}" alt="${item.name}">
+                <div class="catalog-img-wrapper">
+                    <img src="${item.photo}" alt="${item.name}" class="catalog-img">
                 </div>
                 <h3 class="product-card__title">${item.name}</h3>
                 <p class="product-card__description">

@@ -183,16 +183,6 @@ h2 {
   flex-direction: column;
   gap: 12px;
 }
-/*.product-card__image {
-  width: 100%;
-  height: 150px;
-  border-radius: 8px;
-  background: linear-gradient(135deg, #eef1fa, #d9deed);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 42px;
-}*/
 
 .product-card__image {
   width: 100%;
@@ -200,6 +190,32 @@ h2 {
   object-fit: cover;
   border-radius: 8px;
   background: #e8ecf3;
+}
+
+/* ===== Универсальное фото товара в каталоге ===== */
+.catalog-img-wrapper {
+    width: 100%;
+    height: 180px; /* Фиксированная высота делает все карточки одинаковыми по верху */
+    border-radius: 8px;
+    background-color: #f0f4f8; /* Нейтральный фон, если фото с прозрачностью (PNG) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Жёстко обрезает всё, что выходит за границы блока */
+}
+
+.catalog-img {
+    width: 100%;
+    height: 100%;
+    /* 'cover' заполняет весь блок, аккуратно обрезая края.
+       Если нужно видеть фото целиком без обрезки (с полосками по бокам), замени 'cover' на 'contain' */
+    object-fit: cover;
+    display: block;
+}
+
+/* Поддержка тёмной темы для нового фона обёртки */
+.theme-dark .catalog-img-wrapper {
+    background-color: #16233f;
 }
 
 .product-card__title { font-size: 17px; }
