@@ -8,7 +8,8 @@ const app = express();
 const JWT_SECRET = "secretKey"; // В продакшене вынести в .env
 
 // ===== Статика =====
-app.use(express.static(path.join(__dirname, "..", "frontend")));
+// app.use(express.static(path.join(__dirname, "..", "frontend")));
+// пока выключено, теперь на vue работает
 app.use(express.static(path.join(__dirname, "..", "image")));
 app.use(express.json());
 
