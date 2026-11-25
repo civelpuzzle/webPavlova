@@ -1,6 +1,6 @@
-// src/main.js
 import { createApp } from 'vue'
 import App from './App.vue'
-import './style.css' // Подключаем твои глобальные стили
+import router from './router'
+import './assets/main.css'
 
-createApp(App).mount('#app')
+createApp(App).use(router).mount('#app')

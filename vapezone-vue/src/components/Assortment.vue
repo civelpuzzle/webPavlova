@@ -1,6 +1,6 @@
-<!-- src/components/Assortment.vue -->
 <script setup>
 import ProductCard from './ProductCard.vue'
+
 const categories = [
   { id: 1, image: '/hqd.png', title: 'Одноразовые устройства', description: 'Готовые к использованию устройства «из коробки». До 6000 затяжек.' },
   { id: 2, image: '/podSystem.png', title: 'POD-системы', description: 'Компактные устройства на каждый день. Простое обслуживание и заправка.' },
@@ -12,12 +12,20 @@ const categories = [
   { id: 8, image: '/zames.png', title: 'Компоненты для самозамеса', description: 'Базы, глицерин и ароматизаторы для собственных жидкостей.' }
 ]
 </script>
+
 <template>
   <section class="catalog" id="catalog">
     <div class="container">
       <h2>Ассортимент</h2>
       <div class="catalog__grid">
-        <ProductCard v-for="item in categories" :key="item.id" :image="item.image" :title="item.title" :description="item.description" />
+        <ProductCard
+          v-for="item in categories"
+          :key="item.id"
+          :image="item.image"
+          :title="item.title"
+          :description="item.description"
+          link="/catalog"
+        />
       </div>
     </div>
   </section>
